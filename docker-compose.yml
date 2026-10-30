@@ -1,0 +1,12 @@
+services:
+  media-cloud:
+    build: .
+    ports:
+      - '8000:8000'
+    env_file: .env
+    volumes:
+      - media-data:/app/data
+    environment:
+      MEDIA_DB: /app/data/media_cloud.sqlite
+volumes:
+  media-data:
